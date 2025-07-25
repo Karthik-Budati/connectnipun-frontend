@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Make sure body & root are full height */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color:  #f2faff;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.brand-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #007acc;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn {
+  padding: 8px 14px;
+  background: linear-gradient(to right, #007acc, #00bcd4);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #005f99, #00bcd4);
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+}
+
+.suggestions {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  top: 38px;
+  left: 0;
+  right: 0;
+  list-style: none;
+  max-height: 140px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.suggestions li {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+.marquee {
+  font-size: 17px;
+  color: #007acc;
+  background-color: #e0f7ff;
+  padding: 8px 0;
+  margin-top: 0;
+}
+
+.rotating-banner {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.banner-img {
+  width: 70%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.filter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px auto;
+  max-width: 600px;
+  flex-wrap: wrap;
+}
+
+.filter-section select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 180px;
+}
+
+.filter-section button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #007acc;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-section button:hover {
+  background: #005f99;
+}
+
+.results-table {
+  margin: 20px auto;
+  max-width: 90%;
+  overflow-x: auto;
+}
+
+.results-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.results-table th, .results-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.results-table th {
+  background: #007acc;
+  color: white;
+  font-weight: bold;
+}
+
+.results-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.worker-photo, .qr-code {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.no-results {
+  text-align: center;
+  margin: 20px;
+  color: #555;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: none;
+  background: #007acc;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #005f99;
+}
+
+.pagination button:hover {
+  background: #005f99;
+}
+
+.footer {
+  margin-top: 40px;
+  bottom: 0;
+  padding: 20px;
+  background-color: #f0fcff;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-left:500px;
+}
+.banner-wrapper {
+  position: relative;
+  width: 70%;
+  max-width: 700px;
+  margin: 20px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  animation: fadeIn 1s ease-in;
+}
+
+.banner-quote {
+  position: absolute;
+  bottom: 8%;
+  left: 5%;
+  right: 5%;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: 500;
+  backdrop-filter: blur(3px);
+}
+
+.banner-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 6px 12px;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.banner-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.banner-arrow.left {
+  left: 10px;
+}
+
+.banner-arrow.right {
+  right: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .navbar,
+  .nav-buttons,
+  .logo-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .search-bar,
+  .filter-section {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .search-bar input,
+  .filter-section input {
+    width: 90%;
+    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .search-bar button,
+  .filter-section button {
+    width: 60%;
+    font-size: 14px;
+  }
+
+  .rotating-banner .banner-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .banner-img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+  }
+
+  .results-table table,
+  .results-table thead,
+  .results-table tbody,
+  .results-table tr,
+  .results-table td,
+  .results-table th {
+    display: block;
+    width: 100%;
+  }
+
+  .results-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+  }
+
+  .results-table td,
+  .results-table th {
+    text-align: left;
+    padding: 8px 12px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .qr-display img {
+    width: 80%;
+    max-width: 250px;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+  }
+}

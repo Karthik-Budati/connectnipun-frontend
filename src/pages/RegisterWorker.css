@@ -1,0 +1,220 @@
+/* === Reset & Base === */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f2faff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+input, button {
+  font-family: inherit;
+}
+
+/* === Header === */
+.register-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  background: linear-gradient(135deg, #92c2e4, #9ce7ef);
+  color: white;
+  gap: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.register-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+}
+
+.register-header h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
+/* === Main Form Section === */
+.form-section {
+  flex-grow: 1;
+  max-width: 550px;
+  width: 90%;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.step-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step-section h3 {
+  color: #007acc;
+  margin-bottom: 5px;
+}
+
+/* === Input Fields === */
+.input-field {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 12px 14px;
+  border-radius: 8px;
+  gap: 10px;
+}
+
+.input-field i {
+  color: #007acc;
+  font-size: 16px;
+  min-width: 20px;
+}
+
+.input-field input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 15px;
+  background: transparent;
+}
+
+/* === File Upload === */
+.file-upload input[type="file"] {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* === Buttons === */
+.btn {
+  background: linear-gradient(to right, #007acc, #00bcd4);
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #005f99, #009ab5);
+  transform: scale(1.02);
+}
+
+/* === Messages === */
+.error-message, .success-message {
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.error-message {
+  background: #fdecea;
+  border: 1px solid #f5c2c7;
+  color: #e74c3c;
+}
+
+.success-message {
+  background: #e8f9f1;
+  border: 1px solid #b2f0ce;
+  color: #2ecc71;
+}
+
+/* === QR Section === */
+.qr-section {
+  text-align: center;
+}
+
+.qr-section img {
+  margin-top: 20px;
+  width: 200px;
+  border: 2px solid #007acc;
+  border-radius: 8px;
+  background: white;
+  padding: 10px;
+}
+
+/* === Footer === */
+.footer { 
+  background-color: #f2faff;
+  text-align: center;
+  padding: 20px;
+  color: #555;
+  font-size: 14px;
+  border-top: 1px solid #e0e0e0;
+  bottom: 0;
+  margin-right:50px;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .form-section {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .register-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    font-size: 15px;
+  }
+
+  .input-field {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .qr-section img {
+    width: 160px;
+  }
+}
+
+/* Responsive layout for mobile and tablets */
+@media (max-width: 768px) {
+  .register-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .form-section {
+    padding: 20px 10px;
+    width: 100%;
+  }
+
+  .step-section {
+    padding: 20px 15px;
+  }
+
+  .input-field input,
+  .file-upload input[type='file'] {
+    font-size: 14px;
+    padding: 10px 10px 10px 36px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  img.qr-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+}
