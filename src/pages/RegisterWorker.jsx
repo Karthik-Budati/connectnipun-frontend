@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './RegisterWorker.css';
 import logo from '../assets/logo.png';
 
@@ -20,7 +21,7 @@ function RegisterWorker() {
   const qrUrl = qrPath;
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
-
+  const navigate = useNavigate();
   const sendOtp = async () => {
     setError('');
     setMessage('');
@@ -65,7 +66,7 @@ const verifyOtp = async () => {
       const exists = await check.json();
       if (check.ok && exists.exists) {
         localStorage.setItem("isVerified", "true");
-        window.location.href = `/worker/${exists.id}`;
+      navigate(`/worker/${exists.id}`);
       } else {
         setStep('form');
       }
@@ -258,3 +259,4 @@ const verifyOtp = async () => {
 }
 
 export default RegisterWorker;
+
